@@ -1,0 +1,43 @@
+{% load static%}
+{%block content%}
+{%include 'header.html' %}
+
+
+<body>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-12">
+                <h1>Responsive car dealership details cards</h1>
+                <hr>
+            </div>
+            <div class="col-12">
+                <article class="card car-details label-info sponsored">
+                    {% for i in result %}
+                    <div class="card-body">
+                        <div class="d-flex flex-md-row align-items-md-start align-items-center flex-column">
+                            <div class="thumbnail position-relative mb-md-0 mb-3">
+                                <img src="../media/{{i.carphoto}}" data-zoom="" />
+                            </div>
+                            <div class="w-100">
+                                <div class="d-flex flex-md-row flex-column">
+                                    <h3 class="mr-3">{{i.carname}}</h3>
+                                    <div class="ml-auto text-right">
+                                        <h3 class="mr-3">{{i.carname}}</h3>
+                                        <h3>{{i.carprice}}</h3>
+                                        <h3>{{i.carmodel}}</h3>
+                                    </div>
+                                </div>
+                                <hr>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </article>
+            </div>
+        </div>
+    </div>
+    </body>
+{% include 'footer.html' %}
+{%endblock%}  
+    

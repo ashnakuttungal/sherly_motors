@@ -1,0 +1,54 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+ <!-- dr Start -->
+ <div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <p class="d-inline-block border rounded-pill py-1 px-4"> car_update </p>
+               </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                    <form method="POST" action="car_update/{{result.id}}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="Car Name" style="height: 55px;" name="carname" value="{{result.carname}}">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="Car Model" style="height: 55px;" name="carmodel" value="{{result.carmodel}}">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="Car Year" style="height: 55px;" name="caryear" value="{{result.caryear}}">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="Car price" style="height: 55px;" name="carprice" value="{{result.carprice}}">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" class="form-control border-0" placeholder="Car Mileage" style="height: 55px;" name="carmlg" value="{{result.carmlg}}">
+                            </div>
+                           
+                            <div class="advisor_thumb"><img src="../media/{{result.drimg}}" alt="" style="width: 200px;height:200px;">
+                                <div class="col-12 col-sm-6">
+                                    <input type="file" class="form-control border-0" placeholder="Car Photo" style="height: 55px;" name="carphoto">
+                                </div>
+ 
+ 
+                           
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- dr End -->
+{% include 'footer.html'%}
+{% endblock %}
